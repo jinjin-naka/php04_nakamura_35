@@ -22,6 +22,8 @@
                 <div class="navbar-header"><a class="navbar-brand" href="select.php">データ一覧</a></div>
                 <div class="navbar-header"><a class="navbar-brand" href="login.php">ログイン</a></div>
                 <div class="navbar-header"><a class="navbar-brand" href="logout.php">ログアウト</a></div>
+                <div class="navbar-header"><a class="navbar-brand" href="user_register.php">ユーザー登録</a></div>
+                <div class="navbar-header"><a class="navbar-brand" href="user_select">ユーザー管理</a></div>
             </div>
         </nav>
     </header>
