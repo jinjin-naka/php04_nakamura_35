@@ -1,14 +1,11 @@
 <?php
 
-require_once('funcs.php');
+// 0. SESSION開始！！
+session_start();
 
-//1.  DB接続します
-// try {
-//   //Password:MAMP='root',XAMPP=''
-//   $pdo = new PDO('mysql:dbname=gs_db; charset=utf8; host=localhost', 'root', 'root');
-// } catch (PDOException $e) {
-//   exit('DBConnectError:' . $e->getMessage());
-// }
+//１．関数群の読み込み
+require_once('funcs.php');
+logincheck();
 
 $pdo = db_conn();
 
@@ -27,7 +24,7 @@ if ($status==false) {
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
     $view .= '<p>';
 
-    $view .= h($result['date']) . '/' . h($result['portfolio']);
+    $view .= h($result['date']) . '/' . h($result['portfolio'])  . '/' . h($result['author']) . '/' . h($result['URL'])  . '/' . h($result['content']);
 
     $view .= '</p>';
   }
@@ -53,7 +50,7 @@ if ($status==false) {
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">データ登録</a>
+      <a class="navbar-brand" href="index_user.php">データ登録</a>
       </div>
     </div>
   </nav>

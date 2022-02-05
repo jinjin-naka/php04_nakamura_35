@@ -41,3 +41,16 @@ function logincheck()
         $_SESSION['chk_ssid'] = session_id();
     }
 }
+
+// 管理者チェック処理 kanriCheck()
+
+function kanricheck()
+{
+    if ($_SESSION['chk_ssid']== session_id() && $_SESSION['kanri_flg'] == 1){
+        session_regenerate_id(true);
+        $_SESSION['chk_ssid'] = session_id();
+    } else {
+        exit('LOGIN ERROR');
+    }
+}
+

@@ -3,8 +3,6 @@
 //1. POSTデータ取得
 
 $id = $_GET['id'];
-
-
 // 0. SESSION開始！！
 session_start();
 
@@ -17,7 +15,7 @@ kanricheck();
 $pdo = db_conn();
 
 //３．データ登録SQL作成
-$stmt = $pdo->prepare('DELETE from gs_bm_table 
+$stmt = $pdo->prepare('DELETE from gs_user_table 
                     where id = :id
                     ');
 
@@ -30,6 +28,6 @@ if ($status === false) {
     sql_error($stmt);
 } else {
     //*** function化する！*****************
-    rediret('index_kanri.php');
+    rediret('user_select.php');
 }
 

@@ -14,7 +14,7 @@ kanricheck();
 
 <head>
     <meta charset="UTF-8">
-    <title>運用情報登録</title>
+    <title>データ登録</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
         div {
@@ -25,8 +25,6 @@ kanricheck();
 </head>
 
 <body>
-
-    <!-- Head[Start] -->
     <header>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -38,25 +36,21 @@ kanricheck();
             </div>
         </nav>
     </header>
-    <!-- Head[End] -->
 
-    <!-- Main[Start] -->
-    <form method="post" action="insert.php">
+    <!-- method, action, 各inputのnameを確認してください。  -->
+    <form method="POST" action="user_insert.php">
         <div class="jumbotron">
             <fieldset>
-                <legend>参考ポートフォリオ記事登録</legend>
-                <label>ポートフォリオ名：<input type="text" name="portfolio"></label><br>
-                <label>作者：<input type="text" name="author"></label><br>
-                <label>URL：<input type="text" name="URL"></label><br>
-                参考になったポイント<br>
-                <label><textArea name="content" rows="4" cols="40"></textArea></label><br>
+                <legend>ユーザー登録</legend>
+                <label>名前：<input type="text" name="name"></label><br>
+                <label>ID：<input type="text" name="lid"></label><br>
+                <label>PW：<input type="text" name="lpw"></label><br>
+                <label>管理者：<input type="hidden" name="kanri_flg" value="0"><input type="checkbox" name="kanri_flg" value="1"></label><br>
+                <label>退職者：<input type="hidden" name="life_flg" value="0"><input type="checkbox" name="life_flg" value="1"></label><br>
                 <input type="submit" value="送信">
             </fieldset>
         </div>
     </form>
-    <!-- Main[End] -->
-
-
 </body>
 
 </html>

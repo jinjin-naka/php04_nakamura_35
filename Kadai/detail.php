@@ -1,18 +1,16 @@
 <?php
 
-/**
- * １．PHP
- * [ここでやりたいこと]
- * まず、クエリパラメータの確認 = GETで取得している内容を確認する
- * イメージは、select.phpで取得しているデータを一つだけ取得できるようにする。
- * →select.phpのPHP<?php ?>の中身をコピー、貼り付け
- * ※SQLとデータ取得の箇所を修正します。
- */
+
 
  $id = $_GET['id'];
 
- // DBに接続
- require_once('funcs.php');
+// 0. SESSION開始！！
+session_start();
+
+//１．関数群の読み込み
+require_once('funcs.php');
+kanricheck();
+
  $pdo = db_conn();
 
  //３．データ登録SQL作成
@@ -31,14 +29,7 @@ if ($status === false) {
 }
 
 ?>
-<!--
-２．HTML
-以下にindex.phpのHTMLをまるっと貼り付ける！
-(入力項目は「登録/更新」はほぼ同じになるから)
-※form要素 input type="hidden" name="id" を１項目追加（非表示項目）
-※form要素 action="update.php"に変更
-※input要素 value="ここに変数埋め込み"
--->
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -56,11 +47,16 @@ if ($status === false) {
 
 <body>
     <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header"><a class="navbar-brand" href="select.php">データ一覧</a></div>
-            </div>
-        </nav>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="index_kanri.php">データ登録</a></div>
+            <div class="navbar-header"><a class="navbar-brand" href="select_kanri.php">データ一覧</a></div>
+            <div class="navbar-header"><a class="navbar-brand" href="login.php">ログイン</a></div>
+            <div class="navbar-header"><a class="navbar-brand" href="logout.php">ログアウト</a></div>
+            <div class="navbar-header"><a class="navbar-brand" href="user_register.php">ユーザー登録</a></div>
+            <div class="navbar-header"><a class="navbar-brand" href="user_select.php">ユーザー一覧</a></div>
+        </div>
+    </nav>
     </header>
 
     <!-- method, action, 各inputのnameを確認してください。  -->

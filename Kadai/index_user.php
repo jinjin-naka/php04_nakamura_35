@@ -5,7 +5,7 @@ session_start();
 
 //１．関数群の読み込み
 require_once('funcs.php');
-kanricheck();
+logincheck();
 
 ?>
 
@@ -30,11 +30,8 @@ kanricheck();
     <header>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-                <div class="navbar-header"><a class="navbar-brand" href="index_kanri.php">データ登録</a></div>
-                <div class="navbar-header"><a class="navbar-brand" href="select_kanri.php">データ一覧</a></div>
+                <div class="navbar-header"><a class="navbar-brand" href="select_user.php">データ一覧</a></div>
                 <div class="navbar-header"><a class="navbar-brand" href="logout.php">ログアウト</a></div>
-                <div class="navbar-header"><a class="navbar-brand" href="user_register.php">ユーザー登録</a></div>
-                <div class="navbar-header"><a class="navbar-brand" href="user_select.php">ユーザー一覧</a></div>
             </div>
         </nav>
     </header>
